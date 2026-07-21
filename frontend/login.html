@@ -6,54 +6,82 @@
 <title>تسجيل الدخول - الحوثري نت</title>
 
 <style>
+
 body{
-font-family:Arial;
-background:#f2f2f2;
-text-align:center;
+    font-family:Arial;
+    background:#f2f2f2;
 }
 
 .box{
-margin:100px auto;
-background:white;
-width:350px;
-padding:30px;
-border-radius:10px;
+
+    margin:100px auto;
+    background:white;
+    width:350px;
+    padding:30px;
+    border-radius:10px;
+    text-align:center;
 }
+
 
 input{
-width:90%;
-padding:10px;
-margin:10px;
+
+    width:90%;
+    padding:12px;
+    margin:10px;
+
 }
 
+
 button{
-padding:10px 30px;
-background:#0066cc;
-color:white;
-border:none;
-border-radius:5px;
+
+    width:95%;
+    padding:12px;
+    background:#0066cc;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+
 }
+
 </style>
 
 </head>
 
+
 <body>
+
 
 <div class="box">
 
+
 <h2>
-نظام إدارة الحوثري نت
+نظام إدارة شبكة الحوثري نت
 </h2>
 
-<input type="text" placeholder="اسم المستخدم">
 
-<input type="password" placeholder="كلمة المرور">
+<input 
+id="username"
+type="text"
+placeholder="اسم المستخدم">
 
-<button>
+
+<input
+id="password"
+type="password"
+placeholder="كلمة المرور">
+
+
+<button onclick="login()">
 دخول
 </button>
 
+
 </div>
+
+
+<script src="login.js"></script>
+
 
 </body>
 
