@@ -1,0 +1,12 @@
+{
+  "name": "houthari-backend",
+  "version": "1.0.0",
+  "description": "Houthari Net Management System Backend",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "express": "latest",
+    "cors": "latest"
+  }
+}
