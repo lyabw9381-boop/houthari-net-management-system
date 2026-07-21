@@ -30,3 +30,34 @@ CREATE TABLE subscriptions (
     end_date DATE,
     status VARCHAR(20)
 );
+CREATE TABLE invoices (
+
+    id SERIAL PRIMARY KEY,
+
+    customer_id INTEGER,
+
+    amount NUMERIC,
+
+    invoice_date DATE,
+
+    status VARCHAR(20)
+
+);
+
+
+
+CREATE TABLE payments (
+
+    id SERIAL PRIMARY KEY,
+
+    customer_id INTEGER,
+
+    invoice_id INTEGER,
+
+    amount NUMERIC,
+
+    payment_date DATE,
+
+    method VARCHAR(50)
+
+);
