@@ -5,6 +5,7 @@ const customerRoutes = require("./routes/customers");
 const packageRoutes = require("./routes/packages");
 const userRoutes = require("./routes/users");
 const invoiceRoutes = require("./routes/invoices");
+const paymentRoutes = require("./routes/payments");
 
 
 const app = express();
@@ -34,10 +35,8 @@ app.get("/", (req,res)=>{
 
 
 
-// APIs
+// مسارات النظام
 
-
-// المشتركين
 
 app.use(
 "/api/customers",
@@ -45,15 +44,11 @@ customerRoutes
 );
 
 
-// الباقات
-
 app.use(
 "/api/packages",
 packageRoutes
 );
 
-
-// المستخدمين
 
 app.use(
 "/api/users",
@@ -61,11 +56,15 @@ userRoutes
 );
 
 
-// الفواتير
-
 app.use(
 "/api/invoices",
 invoiceRoutes
+);
+
+
+app.use(
+"/api/payments",
+paymentRoutes
 );
 
 
