@@ -4,6 +4,8 @@ const router = express.Router();
 
 const roles = require("../config/roles");
 
+const checkPermission = require("../middleware/auth");
+
 
 let users = [
 
@@ -43,9 +45,9 @@ let users = [
 
 
 
-// عرض المستخدمين
+// عرض المستخدمين (للمدير فقط)
 
-router.get("/", (req,res)=>{
+router.get("/", checkPermission("users_manage"), (req,res)=>{
 
     res.json(users);
 
@@ -68,7 +70,6 @@ router.post("/login",(req,res)=>{
     );
 
 
-
     if(!user){
 
         return res.status(401).json({
@@ -87,9 +88,14 @@ router.post("/login",(req,res)=>{
 
         user:{
 
+            id:user.id,
+
             name:user.name,
 
             role:user.role,
+
+            roleName:
+            roles[user.role].name,
 
             permissions:
             roles[user.role].permissions
