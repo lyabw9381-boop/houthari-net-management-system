@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const customerRoutes = require("./routes/customers");
+const packageRoutes = require("./routes/packages");
 
 const app = express();
 
@@ -19,8 +20,12 @@ app.get("/", (req,res)=>{
 });
 
 
-// مسار المشتركين
+// APIs
+
 app.use("/api/customers", customerRoutes);
+
+app.use("/api/packages", packageRoutes);
+
 
 
 const PORT = 5000;
